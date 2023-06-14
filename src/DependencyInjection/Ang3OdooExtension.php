@@ -1,12 +1,12 @@
 <?php
 
-namespace Ang3\Bundle\OdooBundle\DependencyInjection;
+namespace Zangra\Bundle\OdooBundle\DependencyInjection;
 
-use Ang3\Bundle\OdooBundle\Connection\ClientRegistry;
-use Ang3\Bundle\OdooBundle\ORM\ObjectManagerRegistry;
-use Ang3\Component\Odoo\Client;
-use Ang3\Component\Odoo\ORM\Configuration as OrmConfiguration;
-use Ang3\Component\Odoo\ORM\ObjectManager;
+use Zangra\Bundle\OdooBundle\Connection\ClientRegistry;
+use Zangra\Bundle\OdooBundle\ORM\ObjectManagerRegistry;
+use Zangra\Component\Odoo\Client;
+use Zangra\Component\Odoo\ORM\Configuration as OrmConfiguration;
+use Zangra\Component\Odoo\ORM\ObjectManager;
 use Doctrine\Common\Annotations\Reader;
 use Exception;
 use Symfony\Component\Config\FileLocator;
@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 /**
  * @author Joanis ROUANET
  */
-class Ang3OdooExtension extends Extension
+class ZangraOdooExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -31,14 +31,14 @@ class Ang3OdooExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        $container->setParameter('ang3_odoo.parameters', $config);
+        $container->setParameter('zangra_odoo.parameters', $config);
 
         $connections = $config['connections'] ?? [];
-        $container->setParameter('ang3_odoo.connections', $connections);
+        $container->setParameter('zangra_odoo.connections', $connections);
 
         $orm = $config['orm'] ?? [];
         $orm['managers'] = $orm['managers'] ?? [];
-        $container->setParameter('ang3_odoo.orm', $orm);
+        $container->setParameter('zangra_odoo.orm', $orm);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
@@ -68,7 +68,7 @@ class Ang3OdooExtension extends Extension
 
             if ($connectionName === $config['default_connection']) {
                 $container->setDefinition(Client::class, $client);
-                $container->setAlias('ang3_odoo.client', $clientName);
+                $container->setAlias('zangra_odoo.client', $clientName);
                 $container->registerAliasForArgument($clientName, Client::class, 'client');
             }
 
@@ -93,7 +93,7 @@ class Ang3OdooExtension extends Extension
                 throw new InvalidArgumentException(sprintf('The Odoo connection "%s" was not found', $connectionName));
             }
 
-            $objectManagerServiceName = sprintf('ang3_odoo.orm.object_manager.%s', $connectionName);
+            $objectManagerServiceName = sprintf('zangra_odoo.orm.object_manager.%s', $connectionName);
             $configurationServiceName = sprintf('%s.configuration', $objectManagerServiceName);
             $configuration = new Definition(OrmConfiguration::class, [
                 new Reference('cache.app'),
@@ -101,7 +101,7 @@ class Ang3OdooExtension extends Extension
             ]);
             $container->setDefinition($configurationServiceName, $configuration);
 
-            $objectManagerServiceName = sprintf('ang3_odoo.orm.object_manager.%s', $connectionName);
+            $objectManagerServiceName = sprintf('zangra_odoo.orm.object_manager.%s', $connectionName);
             $objectManager = new Definition(ObjectManager::class, [
                 new Reference($this->formatClientServiceName($connectionName)),
                 new Reference($configurationServiceName),
@@ -112,8 +112,8 @@ class Ang3OdooExtension extends Extension
 
             if ($connectionName === $defaultConnection) {
                 $container->setDefinition(ObjectManager::class, $objectManager);
-                $container->setAlias('ang3_odoo.object_manager', $objectManagerServiceName);
-                $container->setAlias('ang3_odoo.default_object_manager', $objectManagerServiceName);
+                $container->setAlias('zangra_odoo.object_manager', $objectManagerServiceName);
+                $container->setAlias('zangra_odoo.default_object_manager', $objectManagerServiceName);
             }
 
             $objectManagerReference = new Reference($objectManagerServiceName);
@@ -123,6 +123,6 @@ class Ang3OdooExtension extends Extension
 
     private function formatClientServiceName(string $connectionName): string
     {
-        return sprintf('ang3_odoo.client.%s', $connectionName);
+        return sprintf('zangra_odoo.client.%s', $connectionName);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ang3\Bundle\OdooBundle;
+namespace Zangra\Bundle\OdooBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

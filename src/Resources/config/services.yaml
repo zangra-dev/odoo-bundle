@@ -6,21 +6,21 @@ services:
 
   # makes classes in src/ available to be used as services
   # this creates a service per class whose id is the fully-qualified class name
-  Ang3\Bundle\OdooBundle\:
+  Zangra\Bundle\OdooBundle\:
     resource: '../../*'
     exclude: '../../DependencyInjection,Resources}'
 
   # Cache warmer
-  Ang3\Bundle\OdooBundle\ORM\CacheWarmer:
+  Zangra\Bundle\OdooBundle\ORM\CacheWarmer:
     arguments:
-      $config: '%ang3_odoo.orm%'
+      $config: '%zangra_odoo.orm%'
 
   # Connection clients registry
-  ang3_odoo.client_registry:
-    alias: Ang3\Bundle\OdooBundle\Connection\ClientRegistry
+  zangra_odoo.client_registry:
+    alias: Zangra\Bundle\OdooBundle\Connection\ClientRegistry
     public: true
 
   # Object managers registry
-  ang3_odoo.orm.object_manager_registry:
-    alias: Ang3\Bundle\OdooBundle\ORM\ObjectManagerRegistry
+  zangra_odoo.orm.object_manager_registry:
+    alias: Zangra\Bundle\OdooBundle\ORM\ObjectManagerRegistry
     public: true

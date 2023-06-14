@@ -1,8 +1,8 @@
 <?php
 
-namespace Ang3\Bundle\OdooBundle\Connection;
+namespace Zangra\Bundle\OdooBundle\Connection;
 
-use Ang3\Component\Odoo\Client;
+use Zangra\Component\Odoo\Client;
 use RuntimeException;
 
 class ClientRegistry
