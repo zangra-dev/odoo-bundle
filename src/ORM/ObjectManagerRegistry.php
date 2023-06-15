@@ -1,8 +1,8 @@
 <?php
 
-namespace Ang3\Bundle\OdooBundle\ORM;
+namespace Zangra\Bundle\OdooBundle\ORM;
 
-use Ang3\Component\Odoo\ORM\ObjectManager;
+use Zangra\Component\Odoo\ORM\ObjectManager;
 use RuntimeException;
 
 class ObjectManagerRegistry

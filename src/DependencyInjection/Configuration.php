@@ -1,6 +1,6 @@
 <?php
 
-namespace Ang3\Bundle\OdooBundle\DependencyInjection;
+namespace Zangra\Bundle\OdooBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -17,7 +17,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('ang3_odoo');
+        $treeBuilder = new TreeBuilder('zangra_odoo');
 
         $treeBuilder
             ->getRootNode()
