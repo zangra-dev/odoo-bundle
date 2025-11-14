@@ -1,36 +1,65 @@
 {
-    "name": "zangra/odoo-bundle",
-    "type": "symfony-bundle",
-    "description": "Symfony bundle to manage your Odoo databases. Forked from https://github.com/Ang3",
-    "keywords": ["odoo", "api", "client", "bundle", "dbal", "orm", "database", "persistence", "object"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Joanis ROUANET",
-            "email": "joanis.ang3@gmail.com",
-            "homepage": "https://github.com/Ang3"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Zangra\\Bundle\\OdooBundle\\": "src/"
-        }
-    },
-    "require": {
-        "php": ">=7.2.5 || ^8.1",
-        "zangra/php-odoo-api-client": ">=2.0",
-        "zangra/php-odoo-orm": ">=2.0",
-        "symfony/cache": ">=4.2",
-        "symfony/console": ">=4.2",
-        "symfony/dependency-injection": ">=4.2",
-        "symfony/config": ">=4.2",
-        "symfony/http-kernel": ">=4.2",
-        "symfony/security-core": ">=4.2",
-        "symfony/validator": ">=4.2",
-        "symfony/expression-language": ">=4.2"
-    },
-    "require-dev": {
-        "roave/security-advisories": "dev-master",
-        "symfony/phpunit-bridge": "^3.4 || ^4.0"
+  "name": "zangra/odoo-bundle",
+  "type": "symfony-bundle",
+  "description": "Symfony bundle to manage your Odoo databases. Forked from https://github.com/Ang3",
+  "keywords": [
+    "odoo",
+    "api",
+    "client",
+    "bundle",
+    "dbal",
+    "orm",
+    "database",
+    "persistence",
+    "object"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Joanis ROUANET",
+      "email": "joanis.ang3@gmail.com",
+      "homepage": "https://github.com/Ang3"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Zangra\\Bundle\\OdooBundle\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.2.5 || ^8.1",
+    "zangra/php-odoo-api-client": ">=2.0",
+    "zangra/php-odoo-orm": ">=2.0",
+    "symfony/cache": ">=4.2",
+    "symfony/console": ">=4.2",
+    "symfony/dependency-injection": ">=4.2",
+    "symfony/config": ">=4.2",
+    "symfony/http-kernel": ">=4.2",
+    "symfony/security-core": ">=4.2",
+    "symfony/validator": ">=4.2",
+    "symfony/expression-language": ">=4.2",
+    "friendsofphp/proxy-manager-lts": "^1.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "symfony/phpunit-bridge": "^3.4 || ^4.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/zangra-dev/odoo-bundle.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/zangra-dev/php-odoo-api-client.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/zangra-dev/php-xmlrpc-client.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/zangra-dev/php-odoo-orm.git"
+    }
+  ]
 }
