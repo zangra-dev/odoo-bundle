@@ -29,7 +29,7 @@
   "require": {
     "php": ">=7.2.5 || ^8.1",
     "zangra/php-odoo-api-client": ">=2.0",
-    "zangra/php-odoo-orm": ">=2.0",
+    "zangra/php-odoo-orm": "dev-feature/ZNG-33-php-odoo-orm",
     "symfony/cache": ">=4.2",
     "symfony/console": ">=4.2",
     "symfony/dependency-injection": ">=4.2",
@@ -59,7 +59,7 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/zangra-dev/php-odoo-orm.git"
+      "url": "https://github.com/rust-le/php-odoo-orm.git"
     }
   ]
 }

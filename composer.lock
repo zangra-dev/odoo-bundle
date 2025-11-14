@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7a49d72b367a042a7f9484e6821d2a7",
+    "content-hash": "098220333a727a415b8748d3d02a17ec",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -3169,20 +3169,21 @@
         },
         {
             "name": "zangra/php-odoo-orm",
-            "version": "2.1.2",
+            "version": "dev-feature/ZNG-33-php-odoo-orm",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zangra-dev/php-odoo-orm.git",
-                "reference": "4bf73f22889150247611965a5e981f9069804db8"
+                "url": "https://github.com/rust-le/php-odoo-orm.git",
+                "reference": "af43977542ec769ee6b42bcb39ddd0b0a7fcd607"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zangra-dev/php-odoo-orm/zipball/4bf73f22889150247611965a5e981f9069804db8",
-                "reference": "4bf73f22889150247611965a5e981f9069804db8",
+                "url": "https://api.github.com/repos/rust-le/php-odoo-orm/zipball/af43977542ec769ee6b42bcb39ddd0b0a7fcd607",
+                "reference": "af43977542ec769ee6b42bcb39ddd0b0a7fcd607",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1.0",
+                "friendsofphp/proxy-manager-lts": "^1.0",
                 "ocramius/proxy-manager": "^2.2",
                 "php": "^7.2.5 || ^8.1",
                 "symfony/cache": "^5.0 || ^6.0",
@@ -3211,9 +3212,9 @@
             ],
             "description": "PHP object relational mapper (ORM) for Odoo databases.",
             "support": {
-                "source": "https://github.com/zangra-dev/php-odoo-orm/tree/2.1.2"
+                "source": "https://github.com/rust-le/php-odoo-orm/tree/feature/ZNG-33-php-odoo-orm"
             },
-            "time": "2025-06-06T10:54:32+00:00"
+            "time": "2025-11-14T12:24:28+00:00"
         },
         {
             "name": "zangra/php-xmlrpc-client",
@@ -4351,7 +4352,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "zangra/php-odoo-orm": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
