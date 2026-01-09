@@ -54,6 +54,8 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('orm')
                     ->canBeEnabled()
                     ->children()
+                        ->scalarNode('metadata_cache')->defaultValue('cache.system')->end()
+                        ->scalarNode('schema_cache')->defaultValue('cache.system')->end()
                         ->arrayNode('managers')
                             ->useAttributeAsKey('name')
                             ->arrayPrototype()

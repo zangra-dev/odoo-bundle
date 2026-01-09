@@ -96,8 +96,8 @@ class ZangraOdooExtension extends Extension
             $objectManagerServiceName = sprintf('zangra_odoo.orm.object_manager.%s', $connectionName);
             $configurationServiceName = sprintf('%s.configuration', $objectManagerServiceName);
             $configuration = new Definition(OrmConfiguration::class, [
-                new Reference('cache.app'),
-                new Reference('cache.app'),
+                new Reference($config['schema_cache']),
+                new Reference($config['metadata_cache']),
             ]);
             $container->setDefinition($configurationServiceName, $configuration);
 
